@@ -1,0 +1,144 @@
+openapi: 3.0.0
+info:
+  title: Product Catalog API
+  version: 1.0.0
+
+servers:
+  - url: https://mock.server.com
+
+tags:
+  - name: Catalog
+    description: Operations related to product catalog
+
+paths:
+  /products:
+    get:
+      tags:
+        - Catalog
+      summary: Get a list of products
+      parameters:
+        - name: page
+          in: query
+          description: Page number to retrieve
+          required: false
+          schema:
+            type: integer
+        - name: size
+          in: query
+          description: Number of items per page
+          required: false
+          schema:
+            type: integer
+        - name: search
+          in: query
+          description: Search term for filtering results
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A paginated list of products
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  metadata:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                      first:
+                        type: boolean
+                      last:
+                        type: boolean
+                      size:
+                        type: integer
+                      empty:
+                        type: boolean
+                      numberOfElements:
+                        type: integer
+                      totalElements:
+                        type: integer
+                      totalPages:
+                        type: integer
+                  content:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        sku:
+                          type: string
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        image:
+                          type: string
+                          format: uri
+                        category:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            name:
+                              type: string
+                        brand:
+                          type: string
+                        price:
+                          type: number
+                          format: float
+                        stock:
+                          type: integer
+
+  /products/{sku}:
+    get:
+      tags:
+        - Catalog
+      summary: Get a product by SKU
+      parameters:
+        - name: sku
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Details of a product
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sku:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  image:
+                    type: string
+                    format: uri
+                  category:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                  brand:
+                    type: string
+                  price:
+                    type: number
+                    format: float
+                  stock:
+                    type: integer
+                  specifications:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        value:
+                          type: string
