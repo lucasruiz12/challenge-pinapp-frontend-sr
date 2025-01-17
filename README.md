@@ -70,6 +70,7 @@ El proyecto utiliza las siguientes tecnologías y herramientas:
   - Precio
   - Unidades disponibles
 - Estilo mejorado con gradientes y bordes para resaltar la tarjeta del producto.
+- El **header** incluye el logo de la empresa, el cual funciona como un botón que redirige a la ruta raíz (`/`) cuando se hace clic, proporcionando una forma sencilla de volver a la página principal.
 
 ### 🔄 **Estados de Error**
 - Se diseñaron componentes reutilizables para manejar errores como:
