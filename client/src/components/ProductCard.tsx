@@ -1,4 +1,3 @@
-// components/ProductCard.tsx
 import Link from 'next/link';
 
 type Product = {
