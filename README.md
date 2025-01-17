@@ -82,7 +82,7 @@ El proyecto utiliza las siguientes tecnologías y herramientas:
 
 El proyecto ha sido desplegado en **Vercel**. Puedes acceder a la aplicación en el siguiente enlace:
 
-🔗 [Demo en Vercel](#)
+🔗 [Demo en Vercel](https://challenge-pinapp-frontend-sr-lucas-ruiz.vercel.app/)
 
 ## 🙏 Agradecimientos
 
