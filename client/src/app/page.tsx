@@ -46,15 +46,15 @@ export default function Page() {
     if (value) {
       debouncedFetchProducts(value);
     } else {
-      setProducts([]);
+      setTimeout(() => {
+        setProducts([]);
+      }, 1500);
     };
   };
 
   useEffect(() => {
     if (searchTerm) {
       debouncedFetchProducts(searchTerm);
-    } else {
-      setProducts([]);
     };
   }, [searchTerm]);
 
