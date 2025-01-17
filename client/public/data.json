@@ -1,0 +1,93 @@
+[
+    {
+        "sku": "REC-220-101",
+        "name": "TRIGO",
+        "description": "Pastizal para comprar recursos",
+        "image": "https://i.pinimg.com/564x/08/31/cb/0831cb9292a78549083a7168e5a8a2df.jpg",
+        "category": {
+            "id": "1",
+            "name": "Recursos"
+        },
+        "brand": "CAT",
+        "price": 120.0,
+        "stock": 50
+    },
+    {
+        "sku": "REC-220-102",
+        "name": "ARCILLA",
+        "description": "Ladrillo para comprar recursos",
+        "image": "https://i.pinimg.com/564x/1e/75/82/1e75820baffd72b74b02c3b1daf09fd7.jpg",
+        "category": {
+            "id": "1",
+            "name": "Recursos"
+        },
+        "brand": "CAT",
+        "price": 100.0,
+        "stock": 50
+    },
+    {
+        "sku": "REC-220-103",
+        "name": "LANA",
+        "description": "Tela para comprar recursos",
+        "image": "https://i.pinimg.com/originals/61/29/c2/6129c20419d172e1fe402032470ac9dc.png",
+        "category": {
+            "id": "1",
+            "name": "Recursos"
+        },
+        "brand": "CAT",
+        "price": 250.0,
+        "stock": 50
+    },
+    {
+        "sku": "REC-220-104",
+        "name": "MADERA",
+        "description": "Corteza para comprar recursos",
+        "image": "https://i.pinimg.com/originals/4f/05/1f/4f051f034e2298e4c837dc3a81b7af67.png",
+        "category": {
+            "id": "1",
+            "name": "Recursos"
+        },
+        "brand": "CAT",
+        "price": 150.0,
+        "stock": 50
+    },
+    {
+        "sku": "REC-220-105",
+        "name": "PIEDRA",
+        "description": "Mineral para comprar recursos",
+        "image": "https://i.pinimg.com/236x/8a/a9/50/8aa950e970b4132dd65745c00d1fa74e.jpg",
+        "category": {
+            "id": "1",
+            "name": "Recursos"
+        },
+        "brand": "CAT",
+        "price": 200.0,
+        "stock": 50
+    },
+    {
+        "sku": "CRD-220-101",
+        "name": "SOLDADO",
+        "description": "Acción para liberar casillero",
+        "image": "https://pic2-cdn.creality.com/model/dc79f3729600da779e56d3f7c94d0885.png",
+        "category": {
+            "id": "1",
+            "name": "Cartas"
+        },
+        "brand": "CAT",
+        "price": 120.0,
+        "stock": 50
+    },
+    {
+        "sku": "CRD-220-102",
+        "name": "COMERCIO",
+        "description": "Acción para obtención de recursos",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/51HMQpxYGgL._AC_UL210_SR210,210_.jpg",
+        "category": {
+            "id": "1",
+            "name": "Cartas"
+        },
+        "brand": "CAT",
+        "price": 100.0,
+        "stock": 50
+    }
+]

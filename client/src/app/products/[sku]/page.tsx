@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { notFound, useParams } from 'next/navigation';
+import Loader from '@/components/Loader';
 
 interface Product {
   sku: string;
@@ -29,10 +30,12 @@ export default function ProductDetailPage() {
   useEffect(() => {
     const fetchProduct = async () => {
       setLoading(true);
-      setError(null); 
+      setError(null);
 
       try {
-        const response = await fetch(`http://localhost:3001/products?sku=${sku}`);
+        // Realizamos fetch a un JSON local y filter a su respuesta para simular el servidor. En condiciones normales, el filter vendría hecho desde el backend.
+        // const response = await fetch(`http://localhost:3001/products?sku=${sku}`);
+        const response = await fetch("/data.json");
         if (!response.ok) {
           throw new Error('Producto no encontrado');
         }
@@ -54,7 +57,7 @@ export default function ProductDetailPage() {
   }, [sku]);
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return <Loader />;
   }
 
   if (error) {
@@ -66,12 +69,23 @@ export default function ProductDetailPage() {
   }
 
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <img src={product.image} alt={product.name} />
-      <p>{product.description}</p>
-      <p>Precio: ${product.price}</p>
-      <p>Stock: {product.stock}</p>
+    <div className="container mx-auto p-4 h-[80%]">
+      <h1 className="text-5xl py-8">Detalle de producto</h1>
+      <div className="container flex justify-center mx-auto p-4 h-[100%]">
+        <div className="p-4 border rounded w-[50%]">
+          <div className="flex flex-row h-[100%]">
+            <div className="flex flex-col justify-center items-center w-[50%] h-[100%]">
+              <img className="h-[80%] w-[80%]" src={product.image} alt={product.name} width={40} height={40} />
+            </div>
+            <div className="flex flex-col w-[50%] h-[100%]">
+              <h1>{product.name}</h1>
+              <p>{product.description}</p>
+              <p>Precio: ${product.price}</p>
+              <p>Stock: {product.stock}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
