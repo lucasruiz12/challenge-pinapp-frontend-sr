@@ -1,6 +1,8 @@
 import React from 'react';
+import { FaSearch } from 'react-icons/fa';
 import ProductCard from './ProductCard';
 import Loader from './Loader';
+import ProductErrorLoad from './ProductErrorLoad';
 
 interface Product {
     sku: string;
@@ -21,14 +23,18 @@ const ProductList: React.FC<ProductListProps> = ({ products, loading }) => {
     };
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-            {products.length > 0 ? products.map((product) => (
-                <ProductCard key={product.sku} product={product} />
-            ))
+
+        products.length > 0 ?
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+                {products.map((product) => (
+                    <ProductCard key={product.sku} product={product} />
+                ))}
+            </div>
             :
-            <p>Sin coincidencias en la búsqueda</p>
-        }
-        </div>
+            <ProductErrorLoad
+                message="Sin coincidencias en la búsqueda"
+                icon={<FaSearch />}
+            />
     );
 };
 

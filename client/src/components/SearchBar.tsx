@@ -10,7 +10,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchChange }) => 
     <input
       type="text"
       placeholder="Buscar por SKU o nombre"
-      className="p-2 border rounded"
+      className="px-4 py-2 border rounded-2xl w-[100%] md:w-[35%]"
       onChange={onSearchChange}
       value={searchTerm}
     />
